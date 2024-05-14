@@ -1,0 +1,24 @@
+<div class="container">
+  <nav class="loginBtn">
+    <a href="/login">Login</a>
+  </nav>
+
+  <h1>Cars List</h1>
+  <br>
+  <br>
+  <div *ngIf="cars.length > 0; else noCarsTemplate">
+    <ul>
+      <li *ngFor="let car of cars">
+        {{ car.manufacturer }} - {{ car.model }}
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noCarsTemplate>
+    <p>No cars available.</p>
+  </ng-template>
+</div>
+
+<footer>
+  <button class="compareButton" (click)="navigateToComparison()">Compare</button>
+</footer>

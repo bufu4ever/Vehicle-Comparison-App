@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      Vehicle Comparison
+    </div>
+    <div class="card-body">
+      <p>Here you can compare different vehicles.</p>
+
+      <select [(ngModel)]="selectedVehicle1">
+        <option *ngFor="let vehicle of vehicles" [value]="vehicle.name">
+          {{ vehicle.manufacturer }} - {{ vehicle.make }} {{ vehicle.model }} 
+        </option>
+      </select>
+
+      <select [(ngModel)]="selectedVehicle2">
+        <option *ngFor="let vehicle of vehicles" [value]="vehicle.name">
+          {{ vehicle.manufacturer }} - {{ vehicle.make }} {{ vehicle.model }} 
+        </option>
+      </select>
+
+      <button class="btn compare-button" (click)="compareVehicles()">Compare Vehicles</button>
+      
+      <div *ngIf="comparisonResult">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Manufacturer</th>
+              <th>{{ getManufacturer(selectedVehicle1) }}</th>
+              <th>{{ getManufacturer(selectedVehicle2) }}</th>
+            </tr>
+          </thead>
+          <br>
+          <tbody>
+            <tr *ngFor="let difference of comparisonResult">
+              <td>{{ difference.attribute }}</td>
+              <td>{{ difference.value1 }}</td>
+              <td>{{ difference.value2 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

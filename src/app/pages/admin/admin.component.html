@@ -1,0 +1,69 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header">
+          Car Management Dashboard
+          <button class="btn btn-danger float-right" (click)="logout()">Logout</button>
+        </div>
+        <div class="card-body">
+          <form (submit)="addItem()" class="mb-3">
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                <label for="carManufacturer">Manufacturer:</label>
+                <input type="text" class="form-control" id="carManufacturer" [(ngModel)]="newCar.manufacturer" name="carManufacturer" placeholder="Enter manufacturer" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="carModel">Car Model:</label>
+                <input type="text" class="form-control" id="carModel" [(ngModel)]="newCar.model" name="carModel" placeholder="Enter car model" required>
+              </div>
+              <div class="col-md-2 form-group">
+                <label for="carYear">Year:</label>
+                <input type="number" class="form-control" id="carYear" [(ngModel)]="newCar.year" name="carYear" placeholder="Enter year" required>
+              </div>
+              <div class="col-md-2 form-group">
+                <label for="engineCapacity">Engine Capacity:</label>
+                <input type="text" class="form-control" id="engineCapacity" [(ngModel)]="newCar.engineCapacity" name="engineCapacity" placeholder="Engine cc" required>
+              </div>
+              <div class="col-md-2 form-group">
+                <label for="tireSize">Tire Size:</label>
+                <input type="text" class="form-control" id="tireSize" [(ngModel)]="newCar.tireSize" name="tireSize" placeholder="Tire dimensions" required>
+              </div>
+              <div class="col-md-2 form-group">
+                <label for="fuelTankVolume">Fuel Tank Volume:</label>
+                <input type="text" class="form-control" id="fuelTankVolume" [(ngModel)]="newCar.fuelTankVolume" name="fuelTankVolume" placeholder="Fuel capacity" required>
+              </div>
+              <div class="col-md-2 form-group">
+                <label for="Price">Price:</label>
+                <input type="text" class="form-control" id="Price" [(ngModel)]="newCar.Price" name="Price" placeholder="Price" required>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Add Car</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="row">
+            <div *ngFor="let car of cars" class="col-md-4 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <form (submit)="updateCar(car.id, car)">
+                    <input type="text" class="form-control mb-2" [(ngModel)]="car.manufacturer" name="manufacturer" placeholder="Manufacturer">
+                    <input type="text" class="form-control mb-2" [(ngModel)]="car.model" name="model" placeholder="Model">
+                    <input type="number" class="form-control mb-2" [(ngModel)]="car.year" name="year" placeholder="Year">
+                    <input type="text" class="form-control mb-2" [(ngModel)]="car.engineCapacity" name="engineCapacity" placeholder="Engine Capacity">
+                    <input type="text" class="form-control mb-2" [(ngModel)]="car.tireSize" name="tireSize" placeholder="Tire Size">
+                    <input type="text" class="form-control mb-2" [(ngModel)]="car.fuelTankVolume" name="fuelTankVolume" placeholder="Fuel Tank Volume">
+                    <input type="text" class="form-control mb-2" [(ngModel)]="car.Price" name="Price" placeholder="Price">
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <button class="btn btn-danger" (click)="deleteItem(car.id)">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

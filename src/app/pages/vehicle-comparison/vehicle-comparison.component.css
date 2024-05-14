@@ -1,0 +1,67 @@
+.container {
+    max-width: 800px; 
+    margin: auto; 
+    padding-top: 20px; 
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+  }
+  
+  .card-header {
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 15px; 
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+    font-size: 18px; 
+  }
+  
+  .card-body {
+    padding: 20px; 
+    background-color: #f8f9fa; 
+  }
+  
+  select {
+    width: 100%; 
+    padding: 8px; 
+    margin-bottom: 20px;
+    border-radius: 5px; 
+    border: 1px solid #ced4da; 
+  }
+  
+  .btn.compare-button {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  
+  .btn.compare-button:hover {
+    background-color: #218838; 
+  }
+  
+  .table {
+    width: 100%; 
+    margin-top: 20px; 
+    border-collapse: collapse; 
+  }
+  
+  .table th, .table td {
+    text-align: left; 
+    padding: 12px; 
+    border-bottom: 1px solid #dee2e6; 
+  }
+  
+  .table th {
+    background-color: #e9ecef; 
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa; 
+  }
+  
